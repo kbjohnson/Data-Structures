@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>Redflix</title>
+
+<style>
+* {
+	margin:auto;
+	padding:0px;
+	font-family:Helvetica,Arial,sans-serif;
+}
+#background {
+	position:absolute;
+	height:963px;
+	width:100%;
+	background:#eeeeee;
+}
+#container {
+	position:relative;
+	width:800px;
+	height:963px;
+	margin:auto;
+	
+}
+#headder {
+	position:relative;
+	width:800px;
+	height:55px;
+	background:#bb1111;
+	
+}
+#title {
+	margin-left:12px;
+	top:10px;
+	position:relative;
+	vertical-align:middle;
+	display:inline;
+	color:#FFFFFF;
+	font-size:30px;
+	margin-right:20px;
+}	
+.option {
+	top:10px;
+	position:relative;
+	vertical-align:middle;
+	display:inline;
+	color:#FFFFFF;
+	font-size:14px;
+	margin-right:20px;
+}
+#search {
+	position:relative;
+	top:15px;
+	float:right;
+	border-radius:5px;
+	margin-right:12px;
+}
+#selectedMovie {
+	width:780px;
+	padding-top:40px;
+	padding-left:20px;
+	padding-bottom:24px;
+	background:#FFFFFF;
+	
+	
+}
+#selectedMovie p {
+	font-size:10pt;
+	margin-bottom:15px;
+}
+#selectedMovie span {
+	font-size:12pt;
+	padding-right:15px;
+	display:inline-block;
+}
+
+
+#movie {
+	height:400px;
+	width:280px;
+	padding-right:20px;
+
+}
+#movieText{
+	
+	float:center;
+	position:absolute;
+	display:inline;
+	vertical-align:top;
+	font-size:17pt;
+
+}
+#otherMovies {
+	width:775px;
+	height:408px;
+	background:#fffacc;
+	position:relative;
+	padding-right:25px;
+	
+}
+#otherMoviesTxt {
+	text-align:center;
+	padding-top:20px;
+	font-weight:bold;
+}
+.movieThumb {
+	position:relative;
+	float:left;
+	width:70px;
+	height:100px;
+	padding-left:20px;
+	padding-right:25px;
+}
+.otherTitle{
+	position:relative;
+	float:center;
+	font-size:14pt;
+}
+.otherTitle span {
+	font-size:12pt;
+}
+#footer {
+	position:absolute;
+	width:800px;
+	height:34px;
+	font-size:8pt;
+	background:#FFFFFF;
+	
+}
+.footerElement {
+	left:8px;
+	position:relative;
+	margin-right:10px;
+	display:inline;
+	top:10px;
+}
+.lineSelected {
+	border: 0;
+	background-color: #bbbbbb;
+	height: 1px;
+	margin-right:20px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.lineOther {
+	border: 0;
+	background-color: #bbbbbb;
+	height: 1px;
+	margin-left:20px;
+	margin-top:12px;
+	margin-bottom:10px;
+}
+
+
+	
+</style>
+
+<body>
+	<div id="background">
+		<div id="container">
+			<div id="headder">
+				<div id="title">REDFLIX</div>
+				<div class="option">Watch Instantly</div>
+				<div class="option">Just for Kids</div>
+				<div class="option">Personalize</div>
+				<input type="text" name="search" id="search">
+			</div>
+			<div id="selectedMovie">
+				<img src="http://i.imgur.com/zvhmrIS.jpg" id="movie">
+				<div id="movieText">
+					The Lorax
+					<hr class="lineSelected">
+					<p>2012, PG, 1h 26min</p>
+					<span>This animated adaptation of the incisive Dr. Seuss classic features the voice of Danny DeVito as the Lorax, a 
+						forest-dwelling creature who labors to prevent the short-sighted Once-ler from decimating the enviroment
+						in order to turn a profit.</span>
+				</div>
+			</div>
+			<div id="otherMovies">
+	
+				<div id="otherMoviesTxt">Other Movies You May Enjoy</div>
+				<div class="otherMovie" id="movie1">
+					<img src="http://i.imgur.com/9vycBMH.jpg" class="movieThumb">
+					<p class="otherTitle">Rango<br/><br/><span>Johnny Depp lends his voice to the title character, an adventurous family pet who
+						leaves home to learn more about himself in this comic animated tale also featuring the vocal talents of Abigail
+						Breslin, Harry Dean Stanton and Ned Beatty.</span></p>
+				</div>
+				<hr class="lineOther" >
+
+				<div class="otherMovie" id="movie2">
+					<img src="http://i.imgur.com/2vOPPPM.jpg" class="movieThumb">
+					<p class="otherTitle">ParaNorman<br/><br/><span>When an army of zombies invades a small town, it's up to an odd local boy
+						with a knack for communicating with the dead to save the day. But judgmental adults prove to be even more formidable 
+						adversaries.</span></p>
+				</div>
+				<hr class="lineOther" >
+				<div class="otherMovie" id="movie3">
+					<img src="http://i.imgur.com/dACjGGC.jpg" class="movieThumb">
+					<p class="otherTitle">The Adventures of Tintin<br/><br/><span>Blockbuster filmmakers Steven Spielberg and Peter Jackson team up
+						for this 3-D motion capute adaptation of Georges Remi's classic comic strip, entered around the adventures of fearless
+						young journalist Tintin and his trusty dog, Snowy.</span></p>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="footerElement">&copy 2013 Redflix, Inc.</div>
+				<div class="footerElement">About Us</div>
+				<div class="footerElement">Contact Us</div>
+				<div class="footerElement">Blog</div>
+			</div>			
+		</div>
+	</div>
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<title>Validated Form</title>
+
+<style>
+*{
+margin:0px;
+padding:0px;
+
+}
+input {
+text-align:center;	
+font-size:22px;
+height:40px;
+width:300px;
+border-radius:10px;
+}
+input:focus {
+	outline-width:0;
+	
+}	
+#container {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#000000;
+	text-align:center;
+}
+#inputContainer{
+	text-align:center;
+	width:350px;
+	background:#222222;
+	margin-top:100px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:30px;
+	border-radius:10px;
+	
+	
+}
+#container span {
+	position:relative;
+	color:#FFFFFF;
+	font-size:40px;
+	text-align:center;
+}
+#signup {
+	position:relative;
+	background:#222222;
+	border-radius:10px;
+	width:350px;	
+	top:97px;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+#inputContainer span {
+	position:absolute;
+	color:red;
+	visibility:hidden;
+
+	
+}
+.error {
+	float:left;
+	color:red;
+	margin-left:30px;
+	visibility:hidden;
+	
+}
+#submit {
+ 	background:#577577;
+ 	border:0;
+}
+	
+</style>
+
+
+
+
+<body>
+<form action="" method="post" id="myForm" name="myForm" onsubmit="return checkForm();">
+<div id="container">
+	<div id="signup"><span>Sign Up</span></div>
+	<div id="inputContainer">
+
+		<br/>
+		<input type="text" name="userName" id="userName" placeholder ="User Name"><span id="userError">*</span>
+		<br/>
+		<p class="error" id="userErrortxt">User name must only contain letters</p>
+		<br/>
+		<input type="password" name="pass" id="pass" placeholder="Password"><span id="passError">*</span>
+		<br/>
+		<p class="error" id="passErrortxt">Must be at least 8 characters and have at least 1 digit</p>
+		<br/>
+		<input type="text" name="firstName" id="firstName" placeholder="First Name"><span id="firstError">*</span>
+		<br/>
+		<br/>
+		<input type="text" name="lastName" id="lastName" placeholder="Last Name"><span id="lastError">*</span>
+		<br/>
+		<br/>
+		<input type="text" name="phone" id="phone" placeholder="Phone Number(###-###-####)"><span id="phoneError">*</span>
+		<br/>
+		<p class="error" id="phoneErrortxt">Phone number must be of the form ###-###-####</p>
+		<br/>
+		<input type="submit" name="submit" id="submit" value="Submit">
+	</div>
+</div>
+</form>	
+	
+</body>
+
+<script type="text/javascript">
+function checkForm() {
+	var valid = true;
+	var userName = /^[a-zA-Z]+$/;
+	if(document.getElementById("userName").value.match(userName)) {
+		document.getElementById('userError').style.visibility = 'hidden';
+        document.getElementById('userErrortxt').style.visibility = 'hidden';
+	}
+	else {
+        document.getElementById("userName").focus();
+        document.getElementById('userError').style.visibility = 'visible';
+        document.getElementById('userErrortxt').style.visibility = 'visible';
+        valid = false;
+
+	}
+	
+	
+	var password = /^(?=.*\d).{8,}$/;
+	if(document.getElementById("pass").value.match(password)) {
+		document.getElementById('passError').style.visibility = 'hidden';
+        document.getElementById('passErrortxt').style.visibility = 'hidden';
+	}
+	else {
+		if(valid == true) {
+        	document.getElementById("pass").focus();
+       }
+        document.getElementById('passError').style.visibility = 'visible';
+        document.getElementById('passErrortxt').style.visibility = 'visible';
+        valid = false;
+	}
+	
+	
+	if (document.getElementById("firstName").value == "") {
+		if(valid == true) {
+			document.getElementById("firstName").focus();
+		}
+		document.getElementById('firstError').style.visibility = 'visible';
+		valid = false;
+	}
+	else {
+		document.getElementById('firstError').style.visibility = 'hidden';
+	}
+	
+	
+	if (document.getElementById("lastName").value == "") {
+		if(valid == true) {
+			document.getElementById("lastName").focus();
+		}
+		document.getElementById('lastError').style.visibility = 'visible';
+		valid = false;
+	}	
+	else {
+		document.getElementById('lastError').style.visibility = 'hidden';
+	}
+	
+	
+	var phone = /(\d{3})-(\d{3})-(\d{4})/;
+	if(document.getElementById("phone").value.match(phone)) {
+		document.getElementById('phoneError').style.visibility = 'hidden';
+        document.getElementById('phoneErrortxt').style.visibility = 'hidden';
+	}
+	else {
+		if(valid == true) {
+	        document.getElementById("phone").focus();		
+		}
+        document.getElementById('phoneError').style.visibility = 'visible';
+        document.getElementById('phoneErrortxt').style.visibility = 'visible';
+        valid = false;
+	}
+
+	return valid;
+}
+	
+</script>
+
+</html>
